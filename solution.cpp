@@ -1,7 +1,5 @@
-// данный файл нужен для решения различных задач и реализации структур данных и алгоритмов
+// Односвязочный список
 #include <iostream>
-#include <vector>
-#include <ctime>
 
 using namespace std;
 
@@ -107,20 +105,21 @@ T & List<T>::operator[](const int index) {
         counter++;
     }
 }
-
+// удаление всех элементов списка
 template<typename T>
 void List<T>::clear_list() {
     while (SIZE) {
         pop_front();
     }
 }
-
+// вставка в начало списка
 template<typename T>
 void List<T>::push_front(T data) {
     head = new Node<T>(data, head);
     SIZE++;
 }
 
+// вствка по индексу 
 template<typename T>
 void List<T>::insert(T data, int index) {
 
@@ -139,7 +138,7 @@ void List<T>::insert(T data, int index) {
         SIZE++;
     }
 }
-
+// удаление по индексу 
 template<typename T>
 void List<T>::removeAt(int index) {
 
@@ -158,14 +157,13 @@ void List<T>::removeAt(int index) {
         SIZE--;
     }
 }
-
+// удаление последнего элемента
 template<typename T>
 void List<T>::pop_back() {
     removeAt(SIZE - 1);
 }
 
-
-
+// вывод однозвязачного списка
 template<typename T>
 void List<T>::PrintList() {
     Node<T> *curr = head;
@@ -179,7 +177,7 @@ void List<T>::PrintList() {
     cout << endl;
 }
 
-
+// пример работы
 int main() {
     setlocale(LC_ALL, "Rus");
 
